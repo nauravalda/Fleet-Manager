@@ -23,11 +23,11 @@
       <div class="items-center justify-between w-56 items-center px-3" id="navbar-sticky">
         <h2 class="text-3xl font-bold text-secondary mb-10">NikelFleet </h2>
         <div>
-          <a href="/home" aria-current="page" class="block w-full h-12 bg-primary text-white pl-4 py-3 mb-8 rounded-xl hover:opacity-80 active:bg-secondary focus:outline-none">
-            <p>Home</p>
+          <a href="/dashboard" aria-current="page" class="block w-full h-12 bg-primary text-white pl-4 py-3 mb-8 rounded-xl hover:opacity-80 active:bg-secondary focus:outline-none">
+            <p>Dashboard</p>
           </a>
-          <a href="/pemesanan" aria-current="page" class="block w-full h-12 bg-primary text-white pl-4 py-3 mb-8 rounded-xl hover:opacity-80 active:bg-secondary focus:outline-none">
-            <p>Pemesanan</p>
+          <a href="/approval" aria-current="page" class="block w-full h-12 bg-primary text-white pl-4 py-3 mb-8 rounded-xl hover:opacity-80 active:bg-secondary focus:outline-none">
+            <p>Approval</p>
           </a>
         </div>
         <div class="h-96">

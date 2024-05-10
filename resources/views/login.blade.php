@@ -18,7 +18,7 @@
             <div class="items-start">
             <h2 class="text-4xl font-bold text-secondary mb-10">Welcome!</h2>
             <p class="">Masukkan email dan password untuk masuk ke akun Anda.</p>
-            <form action="{}" method="POST" class="flex flex-col mt-10 w-full">
+            <form action="{{ url('login') }}" method="POST" class="flex flex-col mt-10 w-full">
                 @csrf
                 <input type="email" name="email" placeholder="Email" class=" text-white bg-primary rounded-lg p-3 mb-5">
                 <input type="password" name="password" placeholder="Password" class="text-white bg-primary rounded-lg p-3 mb-5">

@@ -20,6 +20,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
     ];
 
     /**
@@ -44,4 +45,25 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function getDataAdmin()
+    {
+        return $this->where('role', 'admin')->get();
+    }
+
+    public function getDataTopLevel()
+    {
+        return $this->where('role', 'top-lvl')->get();
+    }
+
+    public function getDataMidLevel()
+    {
+        return $this->where('role', 'mid-lvl')->get();
+    }
+
+    public function getAllDataUser()
+    {
+        return $this->all();
+    }
+
 }
