@@ -34,11 +34,15 @@
            
 
         </div>
-        <div href="/logout" aria-current="page" class="block w-full h-20 bg-primary text-white pl-4 py-4 bottom-0 mb-8 rounded-xl ">
-          <p class="font-bold">Naura Valda</p>
-          <p class="opacity-70">Top Level Manager</p>
+        <div href="" aria-current="page" class="block w-full h-20 bg-primary text-white pl-4 py-4 bottom-0 mb-8 rounded-xl ">
+        <p class="font-bold">{{ $current_user->name }}</p>
+          <p class="opacity-70">{{ $current_user->role }}</p>
         </div>
-        <button type="submit" class="bg-secondary text-white rounded-3xl w-full p-3 hover:opacity-70">Logout</button>
+        <a href="{{ url('/logout') }}">
+        <button type="submit" class="bg-secondary text-white rounded-3xl w-full p-3 hover:opacity-70"
+        href="{{ url('/logout') }}"
+        >Logout</button>
+        </a>
       </div>
     </div>
   </nav>

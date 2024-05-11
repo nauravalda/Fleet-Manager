@@ -20,11 +20,45 @@
                 <tbody>
                     @foreach ($data as $data)
                     <tr>
-                        <td class="text-white p-3">{{ $data->id_kendaraan }}</td>
-                        <td class="text-white p-3">{{ $data->id_driver }}</td>
-                        <td class="text-white p-3">{{ $data->id_approver_1 }} | {{$data->status_1}}</td>
-                        <td class="text-white p-3">{{ $data->id_approver_2 }} | {{$data->status_2}}</td>
-                        <td class="text-white p-3">{{ $data->tanggal_pemesanan }}</td>
+                        <td class="text-white p-3">
+                            {{ $data->kendaraan_nama }}
+                            <br>
+                            {{ $data->kendaraan_no_polisi }}
+                        </td>
+                        <td class="text-white p-3">
+                            {{ $data->driver_nama }}
+                            <br>
+                            {{ $data->driver_no_telp }}
+                        </td>
+                        <td class="text-white p-3">
+                            {{ $data->approver1_name }}
+                            <br>
+                            @if($data->status_1 == 3)
+                                Pending
+                            @elseif($data->status_1 == 0)
+
+                                Ditolak
+                            @elseif($data->status_1 == 1)
+                                Diterima
+                            @else
+                                Status Tidak Valid
+                            @endif
+                        </td>
+                        <td class="text-white p-3">
+                            {{ $data->approver2_name }}
+                            <br>
+                        @if($data->status_2 == 3)
+                                Pending
+                            @elseif($data->status_2 == 0)
+
+                                Ditolak
+                            @elseif($data->status_2 == 1)
+                                Diterima
+                            @else
+                                Status Tidak Valid
+                            @endif
+                        </td>
+                        <td class="text-white p-3">{{ $data->created_at }}</td>
                     </tr>
                     @endforeach
                 </tbody>

@@ -18,34 +18,28 @@ class AuthController extends Controller
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
-    
-        // search user
-        $user = new User();
-        $user = $user->where('email', $credentials['email'])->first();
 
-        // check if user exists
-        if (!$user) {
-            return back()->withErrors([
-                'email' => 'The provided credentials do not match our records.',
-            ])->onlyInput('email');
-        }
-
-        // check if password is correct
-
-        if (md5($credentials['password']) == md5('12345678')) {
-            
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            // find user role
+            $user = User::where('email', $request->email)->first();
             if ($user->role == 'admin') {
-                return redirect('/home');
+                return redirect()->intended('home');
             } else {
-                return redirect('/dashboard');
+                return redirect()->intended('dashboard');
             }
         }
+
     
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ])->onlyInput('email');
     }
 
-    public const current_user = null;
+    public function logout(): RedirectResponse
+    {
+        Auth::logout();
+        return redirect('/');
+    }
 
 }    

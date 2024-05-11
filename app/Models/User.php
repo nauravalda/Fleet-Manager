@@ -66,4 +66,8 @@ class User extends Authenticatable
         return $this->all();
     }
 
+    public function getDataUserById($id)
+    {
+        return $this->where('id', $id)->first();
+    }
 }

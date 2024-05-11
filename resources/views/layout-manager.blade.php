@@ -5,12 +5,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   @vite('resources/css/app.css')
-  <title>Pemesanan</title>
+  <title>NikelFleet</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.bunny.net">
   <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
 
 
 </head>
@@ -35,10 +35,14 @@
 
         </div>
         <div href="/logout" aria-current="page" class="block w-full h-20 bg-primary text-white pl-4 py-4 bottom-0 mb-8 rounded-xl ">
-          <p class="font-bold">Naura Valda</p>
-          <p class="opacity-70">Top Level Manager</p>
+          <p class="font-bold">{{ $current_user->name }}</p>
+          <p class="opacity-70">{{ $current_user->role=='top-lvl' ? 'Top Level Manager' : 'Middle Level Manager' }}</p>
         </div>
-        <button type="submit" class="bg-secondary text-white rounded-3xl w-full p-3 hover:opacity-70">Logout</button>
+        <a href="{{ url('/logout') }}">
+        <button type="submit" class="bg-secondary text-white rounded-3xl w-full p-3 hover:opacity-70"
+        href="{{ url('/logout') }}"
+        >Logout</button>
+        </a>
       </div>
     </div>
   </nav>
