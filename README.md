@@ -1,8 +1,6 @@
 
 # NikelFleet Management System
-Technical Test Fullstack Developer
 
-## About NikelFleet Management System
 NikelFleet Management System merupakan web aplikasi yang digunakan untuk monitor kendaraan yang dimiliki oleh perusahaan tambang nikel. 
 Aplikasi ini memiliki beberapa fitur seperti:
 1. Terdapat 2 user (admin dan pihak yang menyetujui)
