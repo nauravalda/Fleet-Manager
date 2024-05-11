@@ -20,7 +20,7 @@ Project ini dibuat menggunakan Laravel 8. Untuk menjalankan project ini, ikuti l
 3. Copy `.env.example` to `.env`
 4. Buka XAMPP dan start Apache and MySQL
 5. Buat database baru in phpMyAdmin
-6. Download SQL file dari database/nikelfleet.sql
+6. Download SQL file dari `database/nikelfleet.sql`
 7. Import SQL file ke database yang baru dibuat
 8. Ubah nama database in `.env` file
 9. Run `php artisan key:generate`
